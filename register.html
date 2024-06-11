@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Republic of the Philippines Social Security System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <nav>
+            <a href="#" class="logo">
+                <img src="img/sss-logo-header.png" alt="sss-logo-header">
+            </a>
+            <ul>
+                <li><img src="img/ico-fb.png" alt="fb-link"></li>
+                <li><img src="img/ico-tweet.png" alt="twitter-link"></li>
+                <li><img src="img/ico-ig.png" alt="ig-link"></li>
+                <li><img src="img/ico-yt.png" alt="yt-link"></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <form action="register.php" method="post" onsubmit="ValidateForm()">
+                <span class="title">Online Member User ID Registration</span>
+                <hr>
+                <span class="required">*Required Field</span>
+                <p class="instruction">Please supply the following Information as reported to the Social Security System</p>
+
+                <div class="input-field">
+                    <label for="CRN / SS Number"><span class="required">* </span>CRN / SS Number</label>
+                    <input type="text" name="crn" required>
+                </div>
+                <div class="input-group">
+                    <div class="input-field">
+                        <label for="Email Address"><span class="required">* </span>Email Address</label>
+                        <input type="email" name="email" id="email" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="Confirm Email Address"><span class="required">* </span>Confirm Email Address</label>
+                        <input type="email" id="confirm_email" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-field">
+                        <label for="Preferred User ID"><span class="required">* </span>Preferred User ID</label>
+                        <input type="text" name="preferred_user_id" id="username" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="Confirm Preferred User ID"><span class="required">* </span>Confirm Preferred User ID</label>
+                        <input type="text" id="confirm_username" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-field">
+                        <label><span class="required">* </span>Password</label>
+                        <input type="password" name="password" id="password" required>
+                    </div>
+                    <div class="input-field">
+                        <label><span class="required">* </span>Confirm Password</label>
+                        <input type="password" id="confirm_password" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-field">
+                        <label for="Surname/Last Name"><span class="required">* </span>Last Name</label>
+                        <input type="text" name="last_name" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="Given Name"><span class="required">* </span>First Name</label>
+                        <input type="text" name="first_name" required>
+                    </div>            
+                </div>
+                <div class="input-group">
+                    <div class="input-field">
+                        <label for="Middle Name">Middle Name</label>
+                        <input type="text" name="middle_name">
+                    </div> 
+                    <div class="input-field">
+                        <label for="Suffix">Suffix</label>
+                        <input type="text" name="suffix">
+                    </div>
+                </div>
+                <div class="input-field">
+                    <label for="Date of Birth"><span class="required">* </span>Date of Birth</label>
+                    <input type="date" name="dob" required>
+                </div>
+                <div class="input-group">
+                    <div class="input-field">
+                        <span class="group-title"><span class="required">* </span>Address</span>
+                        <span>&nbsp; Mailing Address (Philippine Address)</span>
+                        <div class="input-group">
+                            <div class="input-field">
+                                <label>Room / Floor / Unit No. & Building Name</label>
+                                <input type="text" name="room_floor_unit">
+                            </div>
+                            <div class="input-field">
+                                <label>House / Lot & Block No.</label>
+                                <input type="text" name="house_lot_block" required>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-field">
+                                <label>Street</label>
+                                <input type="text" name="street">
+                            </div>
+                            <div class="input-field">
+                                <label>Subdivision</label>
+                                <input type="text" name="subdivision">
+                            </div>
+                        </div>
+                        <div class="input-group radio-container">
+                            <input name="location" value="manila" type="radio" id="showMetroManila" checked>
+                            <label>Metro Manila</label>
+                            <input name="location" value="province" type="radio" id="showProvince">
+                            <label>Province</label>         
+                        </div>
+
+                        <div id="manila">
+                            <div class="input-field">
+                                <label>City/Municipality</label>
+                                <select id="manila-cities" name="manila_cities">
+                                    <option selected value="">Select Cities</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <div class="input-field">
+                                    <label>Barangay</label>
+                                    <select id="manila-barangay" name="manila_barangay" disabled>
+                                        <option selected value="">Select Barangay</option>
+                                    </select>
+                                </div>
+                                <div class="input-field">
+                                    <label>Postal Code</label>
+                                    <input type="number" name="manila_postal_code">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="province" style="display: none;">
+                            <div class="input-group">
+                                <div class="input-field">
+                                <label>Province Name</label>
+                                    <select id="select-province" name="select_province">
+                                        <option selected value="">Select Province</option>
+                                    </select>
+                                </div>
+                                <div class="input-field">
+                                    <label>City/Municipality</label>
+                                    <select id="province-cities" name="province_cities" disabled>
+                                        <option selected value="">Select Province</option>
+                                    </select>
+                                </div>                            
+                            </div>
+                            <div class="input-group">
+                                <div class="input-field">
+                                    <label>Barangay</label>
+                                <select id="province-barangay" name="province_barangay" disabled>
+                                    <option selected value="">Select Barangay</option>
+                                </select>
+                                </div>
+                                <div class="input-field">
+                                    <label>Postal Code</label>
+                                    <input type="number" name="province_postal_code">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-field">
+                                <span class="group-title">Foreign Mailing Address</span>
+                                <div class="input-group">
+                                    <div class="input-field">
+                                        <label>Address</label>
+                                        <input type="text" name="foreign_address">
+                                    </div>
+                                    <div class="input-field">
+                                        <label>City</label>
+                                        <input type="text" name="foreign_city">
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <div class="input-field">
+                                        <label>Zip</label>
+                                        <input type="number" name="foreign_zip">
+                                    </div>
+                                    <div class="input-field">
+                                        <label>City</label>
+                                        <select id="select-country" name="foreign_country">
+                                            <option value="" selected>Select Country</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-container">
+                    <button class="submit">Submit</button>
+                    <button class="cancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+        <footer>
+            <div>
+                <i class="fa-solid fa-globe"></i>
+                <span>Copyright Â© 1997</span>
+                <a href="#" class="separate">Terms of Service</a>
+                <a href="#">Data Privacy Notice</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-location-dot"></i>
+                <span>SSS Building East Avenue, Diliman Quezon City, Philippines</span>
+            </div>
+            <div>
+                <i class="fa-solid fa-phone"></i>
+                <span>02-1455 or 8-1455</span>
+            </div>
+            <div>
+                <i class="fa-solid fa-globe"></i>
+                <a href="#">https://crms.sss.gov.ph</a>
+            </div>   
+            <div>
+                <i class="fa-solid fa-at"></i>
+                <span>usssaptayo@sss.gov.ph</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="https://kit.fontawesome.com/9a35ba50ff.js" crossorigin="anonymous"></script>
+</body>
+</html>
