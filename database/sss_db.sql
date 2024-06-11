@@ -50,9 +50,6 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `crn`, `email`, `preferred_user_id`, `password`, `last_name`, `first_name`, `middle_name`, `suffix`, `dob`, `mailing_philippines`, `province`, `city`, `barangay`, `postal`, `mailing_foreign`) VALUES
-(10, '1234567890', 'romeofrancisco269@gmail.com', 'romeofrancisco', 'password', 'Francisco', 'Romeo', 'Lebdan', 'III', '2003-07-27', ' Blk 3, Lot 15 Pasong Buaya 2 Kapatiran Village', '0402100000', '0402109000', 'undefined', '4103', '   ');
-
 --
 -- Indexes for dumped tables
 --
