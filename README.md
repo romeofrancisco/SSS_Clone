@@ -27,7 +27,7 @@ Follow these steps to set up the project on your local machine:
 
 3.)Database Configuration<br>
   Open phpMyAdmin (typically accessible at http://localhost/phpmyadmin).<br>
-  Create a new database (e.g., sss_clone).<br>
+  Create a new database name sss_db.<br>
   Import the provided SQL file (database/sss_clone.sql) into your new database.
 
 4.) Run the Application<br>
